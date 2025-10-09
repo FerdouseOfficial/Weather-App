@@ -15,4 +15,10 @@ async function getData(city) {
 button.addEventListener("click", async () => {
   let value = input.value;
   let result = await getData(value);
+
+  console.log(result);
+
+  cityName.innerText = `${result.location.name} , ${result.location.country}`;
+  cityTime.innerText = result.location.localtime;
+  cityTemp.innerText = result.current.temp_c + "°C";
 });
